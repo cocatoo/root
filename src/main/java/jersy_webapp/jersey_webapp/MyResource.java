@@ -22,9 +22,18 @@ public class MyResource {
 	@Autowired
 	MessageService messageService;
 	
+	/*@GET
+	@Produces(MediaType.TEXT_PLAIN)
+	public String getMessages(){
+		
+		 return "Hi be smart";
+	}	*/
+	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Message> getMessages(){
-		return messageService.getMessages();	
+		List<Message> ml =  messageService.getMessages();
+		System.out.println(ml); 
+		 return ml;
 	}	
 }
